@@ -27,7 +27,6 @@ html {
 .main {
     width: 100%;
     height: auto;
-    position: relative;
 }
 
 /* nav bar */
@@ -35,7 +34,7 @@ html {
 .nav-bar {
     position: absolute;
     width: 150px;
-    height: 100vh;
+    height: 100%;
     top: 0;
     left: 0;
 }
@@ -58,7 +57,7 @@ html {
     font-size: 16px;
     line-height: 19px;
     padding: 12px 5px;
-    border: 1px solid #5C5C5C;
+    border-bottom: 1px solid #5C5C5C;
 }
 
 .nav-bar ul li:hover {
@@ -69,23 +68,127 @@ html {
 
 .web-content {
     width: calc(100% - 150px);
-    height: 100%;
-    position: absolute;
+    height: 100vh;
+    position: relative;
     right: 0;
     top: 0;
+    float: right;
+}
+
+.web-content .container {
+    padding-bottom: 32px;
+}
+
+.brand {
+    display: flex;
+    justify-content: center;
+    padding: 25px 0;
+}
+
+.brand img {
+    width: 220px;
+}
+
+.introduce {
+    width: 100%;
+    height: auto;
+    background: #EFEFEF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.introduce b{
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 21px;
+    color: #000000;
+    padding: 18px 0;
+}
+
+.introduce p{
+    width: 80%;
+    font-weight: 400;
+    font-size: .9rem;
+    line-height: 16px;
+    text-align: center;
+    padding-bottom: 18px;
+}
+
+/* show-case */
+
+.show-case {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+    margin-left: -18px;
+    margin-right: -18px;
+}
+
+.show-card {
+    padding: 0 18px;
+}
+
+.show-card b {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 21px;
+    color: #000000;
+    position: relative;
+}
+
+.show-content {
+    padding-top: 15px;
+}
+
+.show-content img {
+    float: left;
+}
+
+.show-content p {
+    display: inline;
+    font-size: .85rem;
 }
 
 /* footer */
 
 .footer {
-    position: relative;
-    height: 80px;
-    width: calc(100%-150px);
+    position: absolute;
+    height: 60px;
+    width: 100%;
     bottom: 0;
     right: 0;
+    border-top: 1px solid #DEDEDE;
+    display: flex;
+    align-items: center;
+}
+
+.footer p {
+    padding-left: 50px;
+    line-height: 1;
+    margin: 0;
+    font-size: .9rem;
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px){
+    html {
+        font-size: 12px;
+    }
 }
 
 @media screen and (max-width: 767px) {
+
+    html {
+        font-size: 12px;
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
+    
     .nav-bar {
         width: 25%;
     }
@@ -94,5 +197,47 @@ html {
         font-size: 12px;
         line-height: 19px;
         padding: 12px 5px;
+    }
+
+    /* web content */
+
+    .web-content {
+        width: 75%;
+    }
+
+    .brand img {
+        width: 150px;
+    }
+
+    /* show-case */
+
+    .show-case {
+        flex-direction: column;
+        padding-top: 20px;
+        margin-left: -18px;
+        margin-right: -18px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    html {
+        font-size: 9px;
+    }
+
+    .main {
+        overflow: scroll;
+    }
+
+    .web-content {
+        height: 100%;
+    }
+
+    .footer {
+        position: relative;
+        bottom: 0;
+    }
+
+    .footer p{
+        padding-left: 15px;
     }
 }

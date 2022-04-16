@@ -1,6 +1,5 @@
 import React from "react";
 import NavBar from "./NavBar";
-import Footer from "./Footer";
 import WebContent from "./WebContent";
 
 function Main() {
@@ -8,7 +7,6 @@ function Main() {
         <div className="main">
             <NavBar />
             <WebContent />
-            <Footer />
         </div>
     )
 }
